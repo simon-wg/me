@@ -13,11 +13,21 @@
 	</body>
 </html>
 
-<style>
+<style is:global>
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box; /* Stops padding from causing scroll overflow */
+	}
+
+	html {
+		background-color: #001914; /* Kills the Firefox bottom white bar entirely */
+	}
+
 	html,
 	body {
 		margin: 0;
-		width: 100%;
+		padding: 0;
 		height: 100%;
 	}
 </style>
