@@ -52,9 +52,9 @@ import me from "../assets/me.jpeg";
 </div>
 
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans+Deva:wght@100..800&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap");
 	#me {
-		border: 2px solid whitesmoke;
+		border: 2px solid var(--text-color);
 		border-radius: 50%;
 		padding: 4px;
 	}
@@ -68,14 +68,7 @@ import me from "../assets/me.jpeg";
 		position: fixed;
 		inset: 0;
 		z-index: -1;
-		background: #001914;
-		background: linear-gradient(
-			45deg,
-			rgba(0, 25, 20, 1) 0%,
-			rgba(0, 0, 0, 1) 25%,
-			rgba(0, 0, 0, 1) 75%,
-			rgba(38, 0, 0, 1) 100%
-		);
+		background: var(--bg);
 	}
 
 	main {
@@ -94,24 +87,25 @@ import me from "../assets/me.jpeg";
 	}
 
 	h1 {
-		font-family: "Playpen Sans Deva", cursive;
-		font-size: 1.8rem;
+		font-family: "Sacramento", cursive;
+		font-size: 2rem;
+		font-weight: 600;
 		margin-top: 0.25em;
-		color: whitesmoke;
+		color: var(--text-color);
 	}
 
 	p {
 		font-size: 1.2rem;
 		text-align: center;
 		margin-top: 0.25em;
-		color: whitesmoke;
+		color: var(--text-color);
 	}
 
 	a {
 		font-size: 1.2rem;
 		text-align: center;
 		margin-block: 0.25em;
-		color: whitesmoke;
+		color: var(--text-color);
 	}
 
 	#links {
@@ -122,7 +116,7 @@ import me from "../assets/me.jpeg";
 		font-size: 1.2rem;
 		display: flex;
 		align-items: center;
-		color: whitesmoke;
+		color: var(--text-color);
 		text-decoration: none;
 		transition: color 0.2s;
 		padding: 10px 15px;
@@ -130,11 +124,11 @@ import me from "../assets/me.jpeg";
 	}
 
 	#links a:hover {
-		color: whitesmoke;
+		color: var(--text-color);
 	}
 
 	#links:has(a:hover) a:not(:hover) {
-		color: rgb(25, 25, 25);
+		color: var(--inactive-link);
 	}
 
 	@media screen and (max-width: 768px) {

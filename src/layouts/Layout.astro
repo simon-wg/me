@@ -35,11 +35,25 @@
 	*,
 	*::before,
 	*::after {
-		box-sizing: border-box; /* Stops padding from causing scroll overflow */
+		box-sizing: border-box;
+	}
+
+	:root {
+		--bg: #557c99;
+		--text-color: #fafafa;
+		--inactive-link: rgb(25, 25, 25);
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root {
+			--bg: #fafafa;
+			--text-color: #557c99;
+			--inactive-link: #a09a8a;
+		}
 	}
 
 	html {
-		background-color: #001914; /* Kills the Firefox bottom white bar entirely */
+		background: var(--bg);
 	}
 
 	html,
