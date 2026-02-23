@@ -6,6 +6,10 @@ import me from "../assets/me.jpeg";
 
 <div id="container">
 	<div id="background"></div>
+	<button id="theme-toggle" aria-label="Toggle theme">
+		<i class="bi bi-sun" id="sun-icon" aria-hidden="true"></i>
+		<i class="bi bi-moon" id="moon-icon" aria-hidden="true"></i>
+	</button>
 	<main>
 		<section id="hero">
 			<Image
@@ -151,4 +155,43 @@ import me from "../assets/me.jpeg";
 			line-height: 1.5;
 		}
 	}
+
+	#theme-toggle {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		background: none;
+		border: none;
+		color: var(--text-color);
+		font-size: 1.5rem;
+		cursor: pointer;
+		padding: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#sun-icon,
+	#moon-icon {
+		display: none;
+	}
+
+	:root[data-theme="dark"] #sun-icon {
+		display: block;
+	}
+
+	:root[data-theme="light"] #moon-icon {
+		display: block;
+	}
 </style>
+
+<script>
+	const themeToggle = document.getElementById("theme-toggle");
+
+	themeToggle?.addEventListener("click", () => {
+		const currentTheme = document.documentElement.getAttribute("data-theme");
+		const newTheme = currentTheme === "light" ? "dark" : "light";
+		document.documentElement.setAttribute("data-theme", newTheme);
+		localStorage.setItem("theme", newTheme);
+	});
+</script>

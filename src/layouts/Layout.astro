@@ -25,6 +25,18 @@
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Simon Westlin Green</title>
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+					return 'light';
+				}
+				return 'dark';
+			})();
+			document.documentElement.setAttribute('data-theme', theme);
+		</script>
 	</head>
 	<body>
 		<slot />
@@ -44,8 +56,14 @@
 		--inactive-link: rgb(25, 25, 25);
 	}
 
+	:root[data-theme="light"] {
+		--bg: #fafafa;
+		--text-color: #557c99;
+		--inactive-link: #a09a8a;
+	}
+
 	@media (prefers-color-scheme: light) {
-		:root {
+		:root:not([data-theme="dark"]) {
 			--bg: #fafafa;
 			--text-color: #557c99;
 			--inactive-link: #a09a8a;
