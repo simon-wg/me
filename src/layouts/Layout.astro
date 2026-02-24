@@ -1,3 +1,7 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -27,15 +31,25 @@
 		<title>Simon Westlin Green</title>
 		<script is:inline>
 			const theme = (() => {
-				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-					return localStorage.getItem('theme');
+				if (
+					typeof localStorage !== "undefined" &&
+					localStorage.getItem("theme")
+				) {
+					return localStorage.getItem("theme");
 				}
-				if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-					return 'light';
+				if (
+					window.matchMedia(
+						"(prefers-color-scheme: light)",
+					).matches
+				) {
+					return "light";
 				}
-				return 'dark';
+				return "dark";
 			})();
-			document.documentElement.setAttribute('data-theme', theme);
+			document.documentElement.setAttribute(
+				"data-theme",
+				theme,
+			);
 		</script>
 	</head>
 	<body>

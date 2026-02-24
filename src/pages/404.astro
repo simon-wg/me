@@ -1,59 +1,52 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Image } from "astro:assets";
 import me from "../assets/me.jpeg";
 ---
 
-<div id="container">
-	<div id="background"></div>
-	<button id="theme-toggle" aria-label="Toggle theme">
-		<i class="bi bi-sun" id="sun-icon" aria-hidden="true"></i>
-		<i class="bi bi-moon" id="moon-icon" aria-hidden="true"></i>
-	</button>
-	<main>
-		<section id="hero">
-			<Image
-				id="me"
-				src={me}
-				alt="Simon"
-				width={64}
-				height={64}
-				loading="eager"
-			/>
-			<h1>Hey, I'm Simon!</h1>
-			<p>
-				I'm a software engineer passionate about
-				embedded and low level programming. Right now
-				I'm working on innovative solutions with
-				Volvo&nbsp;Car&nbsp;AB and studying full time.
-			</p>
-			<a href="/projects">My projects</a>
-			<section id="links">
-				<a
-					href="https://github.com/simon-wg"
-					aria-label="GitHub profile"
-					><i
-						class="bi bi-github"
-						aria-hidden="true"></i></a
-				>
-				<a
-					href="https://www.linkedin.com/in/simon-wg/"
-					aria-label="LinkedIn profile"
-					><i
-						class="bi bi-linkedin"
-						aria-hidden="true"></i></a
-				>
-				<a
-					href="mailto:simon@simonwg.com"
-					aria-label="Email address"
-					><i
-						class="bi bi-envelope-fill"
-						aria-hidden="true"></i></a
-				>
+<Layout>
+	<div id="container">
+		<div id="background"></div>
+		<button id="theme-toggle" aria-label="Toggle theme">
+			<i class="bi bi-sun" id="sun-icon" aria-hidden="true"
+			></i>
+			<i class="bi bi-moon" id="moon-icon" aria-hidden="true"
+			></i>
+		</button>
+		<main>
+			<section id="hero">
+				<h1>404 Not Found</h1>
+				<section id="links">
+					<a
+						href="https://github.com/simon-wg"
+						aria-label="GitHub profile"
+						><i
+							class="bi bi-github"
+							aria-hidden="true"
+						></i></a
+					>
+					<a
+						href="https://www.linkedin.com/in/simon-wg/"
+						aria-label="LinkedIn profile"
+						><i
+							class="bi bi-linkedin"
+							aria-hidden="true"
+						></i></a
+					>
+					<a
+						href="mailto:simon@simonwg.com"
+						aria-label="Email address"
+						><i
+							class="bi bi-envelope-fill"
+							aria-hidden="true"
+						></i></a
+					>
+				</section>
 			</section>
-		</section>
-	</main>
-</div>
+		</main>
+	</div>
+</Layout>
 
 <style>
 	@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
@@ -110,7 +103,6 @@ import me from "../assets/me.jpeg";
 		text-align: center;
 		margin-block: 0.25em;
 		color: var(--text-color);
-		text-decoration: underline;
 	}
 
 	#links {
