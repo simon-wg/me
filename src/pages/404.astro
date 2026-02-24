@@ -6,41 +6,50 @@ import me from "../assets/me.jpeg";
 ---
 
 <Layout>
-	<div id="container">
-		<div id="background"></div>
-		<button id="theme-toggle" aria-label="Toggle theme">
-			<i class="bi bi-sun" id="sun-icon" aria-hidden="true"
-			></i>
-			<i class="bi bi-moon" id="moon-icon" aria-hidden="true"
-			></i>
+	<div id="container" class="font-montserrat min-h-[100svh] flex flex-col">
+		<div id="background" class="fixed inset-0 -z-1 bg-bg"></div>
+		<button
+			id="theme-toggle"
+			class="absolute top-4 right-4 bg-transparent border-none text-text-main text-2xl cursor-pointer p-2 flex items-center justify-center"
+			aria-label="Toggle theme"
+		>
+			<i
+				class="bi bi-sun hidden [[data-theme='dark']_&]:block"
+				id="sun-icon"
+				aria-hidden="true"></i>
+			<i
+				class="bi bi-moon hidden [[data-theme='light']_&]:block"
+				id="moon-icon"
+				aria-hidden="true"></i>
 		</button>
-		<main>
-			<section id="hero">
-				<h1>404 Not Found</h1>
-				<section id="links">
+		<main class="min-h-[100svh] flex justify-center">
+			<section
+				id="hero"
+				class="max-w-prose flex items-center flex-col justify-center p-4 max-md:pt-10"
+			>
+				<h1
+					class="font-dancing-script text-[2rem] font-semibold mt-1 text-text-main max-md:leading-6"
+				>
+					404 Not Found
+				</h1>
+				<section id="links" class="flex max-md:flex-wrap">
 					<a
 						href="https://github.com/simon-wg"
 						aria-label="GitHub profile"
-						><i
-							class="bi bi-github"
-							aria-hidden="true"
-						></i></a
+						class="text-lg flex items-center text-text-main no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text-main"
+						><i class="bi bi-github" aria-hidden="true"></i></a
 					>
 					<a
 						href="https://www.linkedin.com/in/simon-wg/"
 						aria-label="LinkedIn profile"
-						><i
-							class="bi bi-linkedin"
-							aria-hidden="true"
-						></i></a
+						class="text-lg flex items-center text-text-main no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text-main"
+						><i class="bi bi-linkedin" aria-hidden="true"></i></a
 					>
 					<a
 						href="mailto:simon@simonwg.com"
 						aria-label="Email address"
-						><i
-							class="bi bi-envelope-fill"
-							aria-hidden="true"
-						></i></a
+						class="text-lg flex items-center text-text-main no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text-main"
+						><i class="bi bi-envelope-fill" aria-hidden="true"></i></a
 					>
 				</section>
 			</section>
@@ -49,132 +58,8 @@ import me from "../assets/me.jpeg";
 </Layout>
 
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-	#me {
-		border: 2px solid var(--text-color);
-		border-radius: 50%;
-		padding: 4px;
-	}
-
-	#container {
-		font-family: "Montserrat", sans-serif;
-		min-height: 100svh;
-	}
-
-	#background {
-		position: fixed;
-		inset: 0;
-		z-index: -1;
-		background: var(--bg);
-	}
-
-	main {
-		min-height: 100svh;
-		display: flex;
-		justify-content: center;
-	}
-
-	#hero {
-		max-width: 66ch;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
-
-	h1 {
-		font-family: "Dancing Script", cursive;
-		font-size: 2rem;
-		font-weight: 600;
-		margin-top: 0.25em;
-		color: var(--text-color);
-	}
-
-	p {
-		font-size: 1.2rem;
-		text-align: center;
-		margin-top: 0.25em;
-		color: var(--text-color);
-	}
-
-	a {
-		font-size: 1.2rem;
-		text-align: center;
-		margin-block: 0.25em;
-		color: var(--text-color);
-	}
-
-	#links {
-		display: flex;
-	}
-
-	#links a {
-		font-size: 1.2rem;
-		display: flex;
-		align-items: center;
-		color: var(--text-color);
-		text-decoration: none;
-		transition: color 0.2s;
-		padding: 10px 15px;
-		border-radius: 5px;
-	}
-
-	#links a:hover {
-		color: var(--text-color);
-	}
-
 	#links:has(a:hover) a:not(:hover) {
 		color: var(--inactive-link);
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-			font-family: "Montserrat", sans-serif;
-			min-height: 100svh;
-		}
-
-		#hero {
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-
-	#theme-toggle {
-		position: absolute;
-		top: 16px;
-		right: 16px;
-		background: none;
-		border: none;
-		color: var(--text-color);
-		font-size: 1.5rem;
-		cursor: pointer;
-		padding: 8px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	#sun-icon,
-	#moon-icon {
-		display: none;
-	}
-
-	:root[data-theme="dark"] #sun-icon {
-		display: block;
-	}
-
-	:root[data-theme="light"] #moon-icon {
-		display: block;
 	}
 </style>
 
