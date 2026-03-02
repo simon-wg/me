@@ -1,76 +1,89 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Image } from "astro:assets";
-import me from "../assets/me.jpeg";
 ---
 
 <Layout>
-	<div id="container" class="font-montserrat min-h-[100svh] flex flex-col">
-		<div id="background" class="fixed inset-0 -z-1 bg-bg"></div>
-		<button
-			id="theme-toggle"
-			class="absolute top-4 right-4 bg-transparent border-none text-text-main text-2xl cursor-pointer p-2 flex items-center justify-center"
-			aria-label="Toggle theme"
-		>
-			<i
-				class="bi bi-sun hidden [[data-theme='dark']_&]:block"
-				id="sun-icon"
-				aria-hidden="true"></i>
-			<i
-				class="bi bi-moon hidden [[data-theme='light']_&]:block"
-				id="moon-icon"
-				aria-hidden="true"></i>
-		</button>
-		<main class="min-h-[100svh] flex justify-center">
-			<section
-				id="hero"
-				class="max-w-prose flex items-center flex-col justify-center p-4 max-md:pt-10"
-			>
-				<h1
-					class="font-dancing-script text-[2rem] font-semibold mt-1 text-text-main max-md:leading-6"
-				>
-					404 Not Found
-				</h1>
-				<section id="links" class="flex max-md:flex-wrap">
-					<a
-						href="https://github.com/simon-wg"
-						aria-label="GitHub profile"
-						class="text-lg flex items-center text-text-main no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text-main"
-						><i class="bi bi-github" aria-hidden="true"></i></a
-					>
-					<a
-						href="https://www.linkedin.com/in/simon-wg/"
-						aria-label="LinkedIn profile"
-						class="text-lg flex items-center text-text-main no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text-main"
-						><i class="bi bi-linkedin" aria-hidden="true"></i></a
-					>
-					<a
-						href="mailto:simon@simonwg.com"
-						aria-label="Email address"
-						class="text-lg flex items-center text-text-main no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text-main"
-						><i class="bi bi-envelope-fill" aria-hidden="true"></i></a
-					>
-				</section>
-			</section>
-		</main>
-	</div>
+        <div
+                id="container"
+                class="font-montserrat min-h-[100svh] flex flex-col"
+        >
+                <div id="background" class="fixed inset-0 -z-1 bg-base"></div>
+                <button
+                        id="theme-toggle"
+                        class="absolute top-4 right-4 bg-transparent border-none text-text text-2xl cursor-pointer p-2 flex items-center justify-center"
+                        aria-label="Toggle theme"
+                >
+                        <i
+                                class="bi bi-sun hidden [[data-theme='dark']_&]:block"
+                                id="sun-icon"
+                                aria-hidden="true"></i>
+                        <i
+                                class="bi bi-moon hidden [[data-theme='light']_&]:block"
+                                id="moon-icon"
+                                aria-hidden="true"></i>
+                </button>
+                <main class="min-h-[100svh] flex justify-center">
+                        <section
+                                id="hero"
+                                class="max-w-prose flex items-center flex-col justify-center p-4 max-md:pt-10"
+                        >
+                                <h1
+                                        class="font-dancing-script text-[2rem] font-semibold mt-1 text-text max-md:leading-6"
+                                >
+                                        404 Not Found
+                                </h1>
+                                <section
+                                        id="links"
+                                        class="flex max-md:flex-wrap"
+                                >
+                                        <a
+                                                href="https://github.com/simon-wg"
+                                                aria-label="GitHub profile"
+                                                class="text-lg flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
+                                                ><i
+                                                        class="bi bi-github"
+                                                        aria-hidden="true"
+                                                ></i></a
+                                        >
+                                        <a
+                                                href="https://www.linkedin.com/in/simon-wg/"
+                                                aria-label="LinkedIn profile"
+                                                class="text-lg flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
+                                                ><i
+                                                        class="bi bi-linkedin"
+                                                        aria-hidden="true"
+                                                ></i></a
+                                        >
+                                        <a
+                                                href="mailto:simon@simonwg.com"
+                                                aria-label="Email address"
+                                                class="text-lg flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
+                                                ><i
+                                                        class="bi bi-envelope-fill"
+                                                        aria-hidden="true"
+                                                ></i></a
+                                        >
+                                </section>
+                        </section>
+                </main>
+        </div>
 </Layout>
 
 <style>
-	#links:has(a:hover) a:not(:hover) {
-		color: var(--inactive-link);
-	}
+        #links:has(a:hover) a:not(:hover) {
+                color: var(--inactive-link);
+        }
 </style>
 
 <script>
-	const themeToggle = document.getElementById("theme-toggle");
+        const themeToggle = document.getElementById("theme-toggle");
 
-	themeToggle?.addEventListener("click", () => {
-		const currentTheme =
-			document.documentElement.getAttribute("data-theme");
-		const newTheme = currentTheme === "light" ? "dark" : "light";
-		document.documentElement.setAttribute("data-theme", newTheme);
-		localStorage.setItem("theme", newTheme);
-	});
+        themeToggle?.addEventListener("click", () => {
+                const currentTheme =
+                        document.documentElement.getAttribute("data-theme");
+                const newTheme = currentTheme === "light" ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+        });
 </script>

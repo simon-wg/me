@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  githubLink?: string;
+}
+
+const { title, description, githubLink } = Astro.props;
+---
+
+<div class="break-inside-avoid bg-surface0 p-6 rounded-lg shadow-md mb-6">
+  <h2 class="text-xl font-semibold text-text mb-2">
+    {title}
+  </h2>
+  <p class="text-text mb-4">
+    {description}
+  </p>
+  {
+    githubLink && (
+      <a
+        href={githubLink}
+        class="inline-flex items-center text-text underline hover:no-underline"
+        aria-label={"View " + title + " on GitHub"}
+      >
+        <i class="bi bi-github mr-2" />
+        View on GitHub
+      </a>
+    )
+  }
+</div>

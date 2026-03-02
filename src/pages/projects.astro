@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout>
+	<div
+		id="container"
+		class="font-montserrat min-h-[100svh] flex flex-col"
+	>
+		<div id="background" class="fixed inset-0 -z-1 bg-base"></div>
+		<ThemeToggle client:load />
+		<main class="min-h-[100svh] flex justify-center">
+			<section
+				id="hero"
+				class="max-w-prose flex items-center flex-col justify-center p-4 max-md:pt-10"
+			>
+				<h1
+					class="font-dancing-script text-[2rem] font-semibold mt-1 text-text max-md:leading-6"
+				>
+					My Projects
+				</h1>
+				<div class="mt-6 w-full max-w-4xl">
+					<div
+						class="columns-1 md:columns-2 gap-6"
+					>
+						<ProjectCard
+							title="wfinfo-go"
+							description="A lightweight, efficient replacement for WFInfo designed for Linux users. Automates the process of identifying Warframe relic rewards and fetching their current platinum values from warframe.market. Uses Tesseract OCR for high-accuracy text detection and implements fuzzy matching for resilience against OCR errors."
+							githubLink="https://github.com/simon-wg/wfinfo-go"
+						/>
+						<ProjectCard
+							title="Homelab Server"
+							description="A Proxmox-based homelab running multiple VMs including a Portainer node for container management, file storage, and game servers. Uses Authentik for authentication, Traefik for reverse proxying, and hosts various self-hosted utilities including TeamSpeak."
+						/>
+						<ProjectCard
+							title="lp-rs"
+							description="A Rust library for scraping academic study period and year information from Chalmers University websites. Provides study year extraction, study period parsing with date ranges, comprehensive error handling, and type-safe data structures using Chrono."
+							githubLink="https://github.com/simon-wg/lp-rs"
+						/>
+					</div>
+				</div>
+				<a
+					href="/"
+					class="text-lg text-center my-4
+				                text-text underline hover:no-underline"
+					>Back to Home
+				</a>
+			</section>
+		</main>
+	</div>
+</Layout>
