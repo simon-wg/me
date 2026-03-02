@@ -7,82 +7,65 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <Layout>
-        <div
-                id="container"
-                class="font-montserrat min-h-[100svh] flex flex-col"
+  <div id="container" class="font-montserrat min-h-[100svh] flex flex-col">
+    <div id="background" class="fixed inset-0 -z-1 bg-base"></div>
+    <ThemeToggle client:load />
+    <main class="min-h-[100svh] flex justify-center">
+      <section
+        id="hero"
+        class="max-w-prose flex items-center flex-col justify-center p-4 max-md:pt-10"
+      >
+        <Image
+          id="me"
+          class="border-2 border-text rounded-full p-0.5"
+          src={me}
+          alt="Simon"
+          width={64}
+          height={64}
+          loading="eager"
+        />
+        <h1
+          class="font-dancing-script text-[2rem] font-semibold mt-1 text-text max-md:leading-6"
         >
-                <div id="background" class="fixed inset-0 -z-1 bg-base"></div>
-                <ThemeToggle client:load />
-                <main class="min-h-[100svh] flex justify-center">
-                        <section
-                                id="hero"
-                                class="max-w-prose flex items-center flex-col justify-center p-4 max-md:pt-10"
-                        >
-                                <Image
-                                        id="me"
-                                        class="border-2 border-text rounded-full p-0.5"
-                                        src={me}
-                                        alt="Simon"
-                                        width={64}
-                                        height={64}
-                                        loading="eager"
-                                />
-                                <h1
-                                        class="font-dancing-script text-[2rem] font-semibold mt-1 text-text max-md:leading-6"
-                                >
-                                        Hey, I'm Simon!
-                                </h1>
-                                <p class="text-lg text-center mt-1 text-text">
-                                        I'm a software engineer passionate about
-                                        embedded and low level programming.
-                                        Right now I'm working on innovative
-                                        solutions with Volvo&nbsp;Car&nbsp;AB
-                                        and studying full time.
-                                </p>
-                                <a
-                                        href="/projects"
-                                        class="text-lg text-center my-1 text-text underline hover:no-underline"
-                                        >My projects</a
-                                >
-                                <section
-                                        id="links"
-                                        class="flex max-md:flex-wrap"
-                                >
-                                        <a
-                                                href="https://github.com/simon-wg"
-                                                aria-label="GitHub profile"
-                                                class="text-xl flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
-                                                ><i
-                                                        class="bi bi-github"
-                                                        aria-hidden="true"
-                                                ></i></a
-                                        >
-                                        <a
-                                                href="https://www.linkedin.com/in/simon-wg/"
-                                                aria-label="LinkedIn profile"
-                                                class="text-xl flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
-                                                ><i
-                                                        class="bi bi-linkedin"
-                                                        aria-hidden="true"
-                                                ></i></a
-                                        >
-                                        <a
-                                                href="mailto:simon@simonwg.com"
-                                                aria-label="Email address"
-                                                class="text-xl flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
-                                                ><i
-                                                        class="bi bi-envelope-fill"
-                                                        aria-hidden="true"
-                                                ></i></a
-                                        >
-                                </section>
-                        </section>
-                </main>
-        </div>
+          Hey, I'm Simon!
+        </h1>
+        <p class="text-lg text-center mt-1 text-text">
+          I'm a software engineer passionate about embedded and low level
+          programming. Right now I'm working on innovative solutions with
+          Volvo&nbsp;Car&nbsp;AB and studying full time.
+        </p>
+        <a
+          href="/projects"
+          class="text-lg text-center my-1 text-text underline hover:no-underline"
+          >My projects</a
+        >
+        <section id="links" class="flex max-md:flex-wrap">
+          <a
+            href="https://github.com/simon-wg"
+            aria-label="GitHub profile"
+            class="text-xl flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
+            ><i class="bi bi-github" aria-hidden="true"></i></a
+          >
+          <a
+            href="https://www.linkedin.com/in/simon-wg/"
+            aria-label="LinkedIn profile"
+            class="text-xl flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
+            ><i class="bi bi-linkedin" aria-hidden="true"></i></a
+          >
+          <a
+            href="mailto:simon@simonwg.com"
+            aria-label="Email address"
+            class="text-xl flex items-center text-text no-underline transition-colors duration-200 px-4 py-2.5 rounded-md hover:text-text"
+            ><i class="bi bi-envelope-fill" aria-hidden="true"></i></a
+          >
+        </section>
+      </section>
+    </main>
+  </div>
 </Layout>
 
 <style>
-        #links:has(a:hover) a:not(:hover) {
-                color: var(--inactive-link);
-        }
+  #links:has(a:hover) a:not(:hover) {
+    color: var(--inactive-link);
+  }
 </style>

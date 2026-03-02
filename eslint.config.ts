@@ -3,6 +3,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default defineConfig([
   {
@@ -18,4 +19,5 @@ export default defineConfig([
     language: "css/css",
     extends: ["css/recommended"],
   },
+  eslintConfigPrettier,
 ]);

@@ -21,6 +21,7 @@
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
     "globals": "^17.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.1",
@@ -33,7 +34,10 @@
     "pnpm": ">=10"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "src/**/*.{js,ts,jsx,tsx,astro}": [
+      "astro check",
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

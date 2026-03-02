@@ -3,29 +3,27 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 ---
 
 <button
-	id="theme-toggle"
-	class="absolute top-4 right-4 bg-transparent border-none text-text text-2xl cursor-pointer p-2 flex items-center justify-center"
-	aria-label="Toggle theme"
+  id="theme-toggle"
+  class="absolute top-4 right-4 bg-transparent border-none text-text text-2xl cursor-pointer p-2 flex items-center justify-center"
+  aria-label="Toggle theme"
 >
-	<i
-		class="bi bi-sun hidden [[data-theme='dark']_&]:block"
-		id="sun-icon"
-		aria-hidden="true"></i>
-	<i
-		class="bi bi-moon hidden [[data-theme='light']_&]:block"
-		id="moon-icon"
-		aria-hidden="true"></i>
+  <i
+    class="bi bi-sun hidden [[data-theme='dark']_&]:block"
+    id="sun-icon"
+    aria-hidden="true"></i>
+  <i
+    class="bi bi-moon hidden [[data-theme='light']_&]:block"
+    id="moon-icon"
+    aria-hidden="true"></i>
 </button>
 
 <script>
-	const themeToggle = document.getElementById("theme-toggle");
+  const themeToggle = document.getElementById("theme-toggle");
 
-	themeToggle?.addEventListener("click", () => {
-		const currentTheme =
-			document.documentElement.getAttribute("data-theme");
-		const newTheme = currentTheme === "light" ? "dark" : "light";
-		document.documentElement.setAttribute("data-theme", newTheme);
-		localStorage.setItem("theme", newTheme);
-	});
+  themeToggle?.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
 </script>
-
