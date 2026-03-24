@@ -1,0 +1,16 @@
+pages:
+  image: node:lts
+
+  before_script:
+    - npm i -g pnpm
+    - pnpm i
+
+  script:
+    - pnpm run build
+
+  artifacts:
+    paths:
+      - public
+
+  only:
+    - main
